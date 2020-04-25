@@ -61,6 +61,12 @@ section .container h2{
     padding: 2em 0 1em 0;
     position: relative;
 }
+section .container ul.text-right h2{
+    padding-right: 1.8em;
+}
+section .container ul.text-left h2{
+    padding-left: 1.8em;
+}
 section .container h2::before{
     content: "";
     display: block;
@@ -71,11 +77,11 @@ section .container h2::before{
     position: absolute;
 }
 section .container ul.text-right h2::before{
-    right: -1.6em;
+    right: 0;
     bottom: -0.8em;
 }
 section .container ul.text-left h2::before{
-    left: -1.6em;
+    left: 0;
     bottom: -0.8em;
 }
 section .container li:hover h2::before{
@@ -103,6 +109,7 @@ section p{
 }
 #features ul.text-right>li>p{
     padding: 1em 0 1em 1em;
+    margin-right: 2.5em;
     border: 2px solid #EEEEEE;
     border-right-color: transparent;
     border-bottom-color: transparent;
@@ -110,6 +117,7 @@ section p{
 }
 #features ul.text-left>li>p{
     padding: 1em 1em 1em 0;
+    margin-left: 2.5em;
     border: 2px solid #EEEEEE;
     border-left-color: transparent;
     border-bottom-color: transparent;
@@ -151,9 +159,62 @@ section p{
 #features ul.text-left>li:hover p::before{
     width: 50%;
 }
+
 @keyframes transform{
     from{transform: translateY(0em);}
     50%{transform: translateY(0.7em);}
     100%{transform: translateY(0em);}
 }
 
+@media (max-width: 1240px){
+    section .container figure{
+        display: none;
+    }
+    .container{
+        width: 900px;
+    }
+    .col-3{
+        width: 49%;
+    }
+}
+
+@media (max-width: 940px){
+    .container{
+        width: 95%;
+    }
+    .col-3{
+        display: block;
+        width: 100%;
+    }
+    section .container ul.text-right h2{
+        text-align: left;
+        padding-left: 2.6em;
+    }
+    section .container ul.text-right h2::before{
+        left: 0.8em;
+        bottom: -0.8em;
+    }
+    #features ul.text-right>li>p{
+        text-align: left;
+        padding: 1em 0 1em 0;
+        margin-left: 3.7em;
+        margin-right: -1.5em;
+        border: 2px solid #EEEEEE;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+    #features ul.text-right>li:hover>p{
+        border-color: #005BEA;
+        border-left-color: transparent;
+    }
+    #features ul.text-right>li p::before{
+        content:"";
+        display: block;
+        width: 103%;
+        height: 10px;
+        background-color: #f7f7f7;
+        position: absolute;
+        bottom: -5px;
+        left: -10px;
+        transition: 0.7s;
+}

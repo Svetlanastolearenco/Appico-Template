@@ -78,6 +78,9 @@ section .container ul.text-left h2::before{
     left: -1.6em;
     bottom: -0.8em;
 }
+section .container li:hover h2::before{
+    background-color: #005BEA;
+}
 section p{
     color: #777;
     line-height: 1.5em;
@@ -103,14 +106,51 @@ section p{
     border: 2px solid #EEEEEE;
     border-right-color: transparent;
     border-bottom-color: transparent;
+    position: relative;
 }
 #features ul.text-left>li>p{
     padding: 1em 1em 1em 0;
     border: 2px solid #EEEEEE;
     border-left-color: transparent;
     border-bottom-color: transparent;
+    position: relative;
 }
-
+#features ul.text-right>li:hover>p{
+    border-color: #005BEA;
+    border-right-color: transparent;
+}
+#features ul.text-left>li:hover>p{
+    border-color: #005BEA;
+    border-left-color: transparent;
+}
+#features ul.text-right>li p::before{
+    content:"";
+    display: block;
+    width: 103%;
+    height: 10px;
+    background-color: #f7f7f7;
+    position: absolute;
+    bottom: -5px;
+    right: -10px;
+    transition: 0.7s;
+}
+#features ul.text-right>li:hover p::before{
+    width: 50%;
+}
+#features ul.text-left>li p::before{
+    content:"";
+    display: block;
+    width: 103%;
+    height: 10px;
+    background-color: #f7f7f7;
+    position: absolute;
+    bottom: -5px;
+    left: -10px;
+    transition: 0.7s;
+}
+#features ul.text-left>li:hover p::before{
+    width: 50%;
+}
 @keyframes transform{
     from{transform: translateY(0em);}
     50%{transform: translateY(0.7em);}
